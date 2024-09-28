@@ -33,15 +33,7 @@ private:
 public:
 
     void addSong() {
-        string title, artist;
-        cout << "\nEnter the song title: ";
-        getline(cin, title);
-        cout << "Enter the artist name: ";
-        getline(cin, artist);
         
-        Song newSong(title, artist);
-        playlist.push_back(newSong);  
-        cout << "Song added successfully!\n";
     }
 
     void viewSongs() const {
@@ -94,7 +86,6 @@ public:
 
         while (cin.fail() || choice < 0 || choice > playlist.size()) {  
             cin.clear();  
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');  
             cout << "Invalid input. Please enter a valid song number: ";
             cin >> choice;
         }
@@ -119,7 +110,6 @@ int displayMenu() {
 
     while (cin.fail() || choice < 1 || choice > 5) {
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');  
         cout << "Invalid choice. Please enter a number between 1 and 5: ";
         cin >> choice;
     }
